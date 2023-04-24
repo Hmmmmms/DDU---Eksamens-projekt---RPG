@@ -207,7 +207,7 @@ TextureImporter:
       213: -1765344478882638021
     second: plains_67
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -224,10 +224,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -266,6 +268,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -281,6 +285,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1732,9 +1748,77 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      plains_35: 4321760947273644098
+      plains_52: -6478995737067880067
+      plains_22: 8394807102852594515
+      plains_40: -8828766669540018513
+      plains_21: -6086718117276255129
+      plains_15: 511219509800730245
+      plains_61: -3274366583510857266
+      plains_3: 4203590028799050447
+      plains_24: 196896690990086889
+      plains_44: -4837669733973488385
+      plains_56: -870204744733602715
+      plains_1: 1292707965213795430
+      plains_34: -6234881457812026098
+      plains_33: 8643652559207746438
+      plains_19: 8787423410888502615
+      plains_18: -8229393178868597480
+      plains_57: -1793508878669055018
+      plains_58: 5621361092292788471
+      plains_0: -6243134052031417624
+      plains_53: -2995754524499608098
+      plains_48: 5804676982665648036
+      plains_45: -597590969770054751
+      plains_8: 999560300097964580
+      plains_11: -9076068145979245971
+      plains_60: 1395966759132061829
+      plains_16: -8755926904235227646
+      plains_32: -7771970129191226834
+      plains_63: 465053206642088176
+      plains_14: 6684599617296685658
+      plains_49: 2289268751265971029
+      plains_25: -4282265112579531758
+      plains_30: 4431657311563404312
+      plains_12: 2515175367803990689
+      plains_4: -6459104309942288818
+      plains_38: 3894422789234183330
+      plains_55: 3450881609950847178
+      plains_27: 3399562211263986316
+      plains_6: -3412354751230170324
+      plains_59: -1529981367989776297
+      plains_66: 6098329331951521125
+      plains_9: -4382957797141417382
+      plains_42: -7889074417918329771
+      plains_28: -7583929203152682062
+      plains_10: -6218056930501333746
+      plains_20: -2319199979355022258
+      plains_65: 6930682160177973912
+      plains_5: -1911990619869277082
+      plains_7: 8681484852556009916
+      plains_23: -4254654645481913222
+      plains_43: -6565854547126230731
+      plains_39: -1342852292686188692
+      plains_47: 7929226770672106126
+      plains_51: 6125734085417583161
+      plains_62: 6612285464378935649
+      plains_54: 8363795263373439445
+      plains_46: -3347031489802317967
+      plains_29: 6090751220538998613
+      plains_64: -1788298084407288153
+      plains_17: 6783502009368789552
+      plains_13: -7957074171325392328
+      plains_31: 8024824630842786395
+      plains_37: 559398325813870484
+      plains_2: 9023522797868800323
+      plains_26: -5291510833326560966
+      plains_36: 6401810592111409340
+      plains_41: 9172054936038431750
+      plains_50: 2458933345346934923
+      plains_67: -1765344478882638021
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

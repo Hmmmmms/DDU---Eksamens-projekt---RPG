@@ -78,7 +78,7 @@ TextureImporter:
       213: 7427473825912618326
     second: slime_24
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -95,10 +95,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -137,6 +139,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -152,6 +156,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -700,9 +716,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      slime_2: 2542698315722941828
+      slime_16: 1700843758525247274
+      slime_5: 8065215198520230363
+      slime_9: 1702944112137351692
+      slime_19: 4963280553436401018
+      slime_7: -6776676135277293862
+      slime_12: 7065398221910334755
+      slime_15: -6455651614561120216
+      slime_21: -3395474172157937565
+      slime_1: -458641133534639524
+      slime_24: 7427473825912618326
+      slime_13: 5088725752757704037
+      slime_0: 368543389579951487
+      slime_6: 292511346337569837
+      slime_10: 574139385759250185
+      slime_14: 2446715294408889903
+      slime_8: 5879532933249936704
+      slime_17: -1893580178282796242
+      slime_18: 8878132033782264596
+      slime_22: 6932627294812020299
+      slime_11: -1071876908328471809
+      slime_3: -3711818451352614709
+      slime_20: 3519091041362292632
+      slime_4: -6875693984060724655
+      slime_23: 4223093693952456910
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

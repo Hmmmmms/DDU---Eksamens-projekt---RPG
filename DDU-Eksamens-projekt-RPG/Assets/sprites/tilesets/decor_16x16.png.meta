@@ -63,7 +63,7 @@ TextureImporter:
       213: -7727969427802177222
     second: decor_16x16_19
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -80,10 +80,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,6 +124,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -137,6 +141,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -580,9 +596,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      decor_16x16_5: 8042757354850781098
+      decor_16x16_1: -3212286273555906102
+      decor_16x16_8: -5995746306364573920
+      decor_16x16_16: 5012308838883470974
+      decor_16x16_15: 1357260154413129634
+      decor_16x16_2: 1182821835117424558
+      decor_16x16_19: -7727969427802177222
+      decor_16x16_10: 4221117213850117788
+      decor_16x16_13: 2436012926713136385
+      decor_16x16_9: -8797443990081439250
+      decor_16x16_18: -6584971674818289218
+      decor_16x16_3: 9072027579460667051
+      decor_16x16_11: 5269931928406947747
+      decor_16x16_4: 8401399213648291765
+      decor_16x16_12: -4972185803226467481
+      decor_16x16_17: -4102348646477747009
+      decor_16x16_6: 2541185146844476238
+      decor_16x16_0: -2061284315431252709
+      decor_16x16_7: 4496199408847516386
+      decor_16x16_14: 322158840712355243
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

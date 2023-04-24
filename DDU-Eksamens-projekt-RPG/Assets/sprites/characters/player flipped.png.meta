@@ -156,7 +156,7 @@ TextureImporter:
       213: -1303461283774144658
     second: player flipped_50
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -173,10 +173,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -215,6 +217,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -230,6 +234,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1324,9 +1340,60 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      player flipped_19: 920718093103641069
+      player flipped_27: -7015400478373058679
+      player flipped_33: 5948227450090182259
+      player flipped_31: 8680322929568457223
+      player flipped_36: -5357039632999652501
+      player flipped_3: -1992570321420639026
+      player flipped_15: -4259100517815542512
+      player flipped_9: -4220270184071052909
+      player flipped_48: -239813995039795305
+      player flipped_50: -1303461283774144658
+      player flipped_21: -4225094510546697291
+      player flipped_1: -1980501142390921727
+      player flipped_25: -6191801322157679861
+      player flipped_28: 159065980557828323
+      player flipped_37: 5683631652288452982
+      player flipped_32: -6165683575311556986
+      player flipped_40: 3210483144723601481
+      player flipped_42: 7187145297451701483
+      player flipped_14: 4750171973670966903
+      player flipped_46: 7512777643721649285
+      player flipped_5: 6354379334868387181
+      player flipped_11: -3831795793968915742
+      player flipped_17: -8389920324228214884
+      player flipped_13: -6085402219200032362
+      player flipped_8: 7686111123072815904
+      player flipped_20: 3326669199939396184
+      player flipped_24: 3478203041412600654
+      player flipped_0: -8751310302043274712
+      player flipped_47: 3520899877964607894
+      player flipped_6: 5434165769729534619
+      player flipped_41: -3164556323632492838
+      player flipped_10: -3361892515098649383
+      player flipped_16: 46723192519921428
+      player flipped_29: -1569803907849688856
+      player flipped_12: -183676665565772913
+      player flipped_22: 7380452410191606205
+      player flipped_18: -430381747134909846
+      player flipped_35: -7800086110453211827
+      player flipped_30: -35583698689706529
+      player flipped_39: -6682471335322232344
+      player flipped_43: 418878622188480641
+      player flipped_34: -6130479378625568074
+      player flipped_26: 7274067683815250597
+      player flipped_2: 7729158492792111881
+      player flipped_4: -2816912654175982359
+      player flipped_44: -7130671018237145795
+      player flipped_7: 8859708953483422079
+      player flipped_49: 7156075939810995993
+      player flipped_38: -1739851960653665377
+      player flipped_23: 3521232697038471050
+      player flipped_45: -5523790949650805598
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
