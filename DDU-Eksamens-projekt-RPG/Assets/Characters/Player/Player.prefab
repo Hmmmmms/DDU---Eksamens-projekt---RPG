@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.228, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 61044851318689861}
   m_RootOrder: 3
@@ -70,7 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  swordDamage: 3
 --- !u!1 &809017284
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +101,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 61044851318689861}
   m_RootOrder: 2
@@ -141,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  swordDamage: 3
 --- !u!1 &1588337234
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +174,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.11, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 61044851318689861}
   m_RootOrder: 1
@@ -212,7 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  swordDamage: 3
 --- !u!1 &3521876226522860064
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,9 +234,10 @@ GameObject:
   - component: {fileID: 7214880006911674010}
   - component: {fileID: 124194416839971026}
   - component: {fileID: 5237162657739064211}
+  - component: {fileID: 9096880164564953823}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Player
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +252,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5824841237023313521}
   - {fileID: 1588337235}
@@ -264,6 +272,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -347,8 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleFriction: 0.9
-  moveSpeed: 150
-  maxSpeed: 1.75
+  moveSpeed: 250
+  maxSpeed: 0.5
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0
@@ -377,8 +386,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 50
-  m_AngularDrag: 0
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -387,7 +396,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!95 &124194416839971026
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -400,6 +409,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -420,6 +430,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.1233537}
   serializedVersion: 2
   m_Radius: 0.046870016
+--- !u!114 &9096880164564953823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521876226522860064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3c045dcb231714f83342039bea36aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTurnInvincible: 1
+  invincibilityTime: 0.25
+  isAlive: 1
+  canMove: 1
+  health: 200
 --- !u!1 &4970907546584824573
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +475,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.11, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 61044851318689861}
   m_RootOrder: 0
@@ -490,4 +518,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  swordDamage: 3

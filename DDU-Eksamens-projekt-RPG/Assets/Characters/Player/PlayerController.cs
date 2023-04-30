@@ -28,9 +28,9 @@ public class PlayerController : MonoBehaviour
 
     public float idleFriction = 0.9f;
 
-    public float moveSpeed = 150f;
+    public float moveSpeed = 500f;
 
-    public float maxSpeed = 1.75f;
+    public float maxSpeed = 5f;
 
     private bool isMoving = false;
 
@@ -42,22 +42,7 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
-    public float PlayerHealth
-    {
-        set
-        {
-            playerHealth = value;
-
-            if (playerHealth <= 0)
-            {
-                Defeated();
-            }
-        }
-        get { return playerHealth; }
-    }
-
-    public static float playerHealth = 3;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -88,14 +73,21 @@ public class PlayerController : MonoBehaviour
         if (canMove == true && moveInput != Vector2.zero)
         {
             //If movement input is not 0, try to move
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
+            rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime);
 
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity = rb.velocity.normalized * limitedSpeed;
+            }
             
+
             IsMoving = true;
         }
         else
         {
-            //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
 
             IsMoving = false;
         }
@@ -116,6 +108,8 @@ public class PlayerController : MonoBehaviour
             if (count == 0)
             {
                 rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+                
+
                 return true;
 
             }
@@ -141,17 +135,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
-    public void SwordAttack()
-    {
-        LockMovement();
-    }
-
-    public void EndSwordAttack()
-    {
-        UnlockLockMovement();   
-    }
-
     public void LockMovement()
     {
         canMove = false;
@@ -160,17 +143,5 @@ public class PlayerController : MonoBehaviour
     public void UnlockLockMovement()
     {
         canMove = true;
-    }
-
-    public void Defeated()
-    {
-        LockMovement();
-        animator.SetTrigger("PlayerDefeated");
-
-    }
-
-    public void RemovePlayer()
-    {
-        Destroy(gameObject);
     }
 }
