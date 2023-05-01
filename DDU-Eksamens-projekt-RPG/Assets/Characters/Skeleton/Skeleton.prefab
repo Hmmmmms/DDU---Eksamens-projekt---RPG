@@ -57,11 +57,11 @@ CapsuleCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: -0.16}
-  m_Size: {x: 0.44, y: 0.6}
+  m_Offset: {x: 0.12, y: -0.16}
+  m_Size: {x: 0.5, y: 0.7}
   m_Direction: 0
 --- !u!1 &2013853249633718219
 GameObject:
@@ -300,9 +300,9 @@ CapsuleCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16, y: -0.16}
-  m_Size: {x: 0.44, y: 0.6}
+  m_Offset: {x: -0.12, y: -0.16}
+  m_Size: {x: 0.5, y: 0.7}
   m_Direction: 0

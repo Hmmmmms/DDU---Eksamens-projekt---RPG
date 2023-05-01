@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,17 +14,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    Vector2 moveInput = Vector2.zero;
+    private Vector2 moveInput = Vector2.zero;
 
     Rigidbody2D rb;
 
     Animator animator;
 
     SpriteRenderer spriteRenderer;
-
-    //måske
-    //public GameObject swordHitbox;
-    //Collider2D swordCollider;
 
     public float idleFriction = 0.9f;
 
@@ -42,8 +38,6 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +49,10 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
+
         //Set which way player is facing
-        
         animator.SetFloat("Horizontal", moveInput.x);
         animator.SetFloat("Vertical", moveInput.y);
 
@@ -73,7 +69,6 @@ public class PlayerController : MonoBehaviour
         if (canMove == true && moveInput != Vector2.zero)
         {
             //If movement input is not 0, try to move
-            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
             rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime);
 
             if (rb.velocity.magnitude > maxSpeed)
@@ -92,7 +87,18 @@ public class PlayerController : MonoBehaviour
             IsMoving = false;
         }
 
+        
+
     }
+    private void Update()
+    {
+        //Sword Attack
+        if ((Input.GetMouseButtonDown(0)) || (Input.GetKeyDown("space")))
+        {
+            animator.SetTrigger("swordAttack");
+        }
+    }
+
 
     private bool TryMove(Vector2 direction)
     {
@@ -122,17 +128,6 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-    }
-
-    void OnMove(InputValue movementValue)
-    {
-        moveInput = movementValue.Get<Vector2>();
-    }
-
-    void OnFire()
-    {
-        animator.SetTrigger("swordAttack");
-        
     }
 
     public void LockMovement()
