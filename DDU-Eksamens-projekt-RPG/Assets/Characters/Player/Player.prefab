@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 375193058}
   - component: {fileID: 375193060}
   - component: {fileID: 375193059}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SwordHitboxDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 809017285}
   - component: {fileID: 809017287}
   - component: {fileID: 809017286}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SwordHitboxUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 1588337235}
   - component: {fileID: 1588337237}
   - component: {fileID: 1588337236}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SwordHitboxLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ Transform:
   - {fileID: 375193058}
   - {fileID: 8245739723568310935}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4024205205913378113
 SpriteRenderer:
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 5824841237023313521}
   - component: {fileID: 4664498268350698062}
   - component: {fileID: 399280731348452306}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SwordHitboxRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 8245739723568310935}
   - component: {fileID: 3663392845359685738}
   - component: {fileID: 2319694720892840397}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ShieldHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

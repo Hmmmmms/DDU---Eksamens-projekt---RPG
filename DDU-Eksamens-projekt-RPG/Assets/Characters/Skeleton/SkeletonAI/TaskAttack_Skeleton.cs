@@ -22,11 +22,11 @@ public class TaskAttack_Skeleton : Node
     {
         Transform target = (Transform)GetData("target");
 
-        if(target != null)
+        
+
+        if (target != null)
         {
             _damagableCharacterEnemy = target.GetComponent<DamagableCharacter>();
-
-
             _animator.SetBool("isMoving", false);
 
             
@@ -45,12 +45,10 @@ public class TaskAttack_Skeleton : Node
                     }
                 }
             }
-            else
-            {
-                ClearData("target");
-            }
-
-            
+        }
+        else
+        {
+            ClearData("target");
         }
 
         state = NodeState.RUNNING;

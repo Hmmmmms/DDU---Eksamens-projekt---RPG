@@ -13,13 +13,13 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", isMoving);
         }
     }
-    public bool IsBlocking 
-    { 
-        set 
+    public bool IsBlocking
+    {
+        set
         {
             isBlocking = value;
             animator.SetBool("isBlocking", isBlocking);
-        } 
+        }
     }
 
     private Vector2 moveInput = Vector2.zero;
@@ -50,7 +50,9 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
-    
+    bool _swordEquipped = false;
+    bool _shieldEquipped = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,8 @@ public class PlayerController : MonoBehaviour
         _damageableCharacter = GetComponent<DamagableCharacter>();
         animator.SetFloat("Last_Horizontal", 1);
         animator.SetFloat("Last_Vertical", 0);
+        _swordEquipped = false;
+        _shieldEquipped = false;
     }
     private void FixedUpdate()
     {
@@ -91,7 +95,7 @@ public class PlayerController : MonoBehaviour
                 float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
                 rb.velocity = rb.velocity.normalized * limitedSpeed;
             }
-            
+
 
             IsMoving = true;
         }
@@ -102,25 +106,46 @@ public class PlayerController : MonoBehaviour
             IsMoving = false;
         }
 
-        
+
 
     }
+
+    private void OnEnable()
+    {
+        Sword.SwordEquipped += swordEquipped;
+        Shield.ShieldEquipped += shieldEquipped;
+    }
+
+    private void OnDisable()
+    {
+        Sword.SwordEquipped -= swordEquipped;
+        Shield.ShieldEquipped -= shieldEquipped;
+    }
+
     private void Update()
     {
-        //Sword Attack
-        if ((Input.GetMouseButtonDown(0)) || (Input.GetKeyDown("space")))
+        if (_swordEquipped == true)
         {
-            animator.SetTrigger("swordAttack");
+            //Sword Attack
+            if ((Input.GetMouseButtonDown(0)) || (Input.GetKeyDown("space")))
+            {
+                animator.SetTrigger("swordAttack");
+            }
         }
 
-        if (Input.GetKey(KeyCode.B))
+        if (_shieldEquipped == true)
         {
-            Blocking();
+            //Block With Shield
+            if (Input.GetKey(KeyCode.B))
+            {
+                Blocking();
+            }
+            if (Input.GetKeyUp(KeyCode.B))
+            {
+                StoppedBlocking();
+            }
         }
-        if(Input.GetKeyUp(KeyCode.B))
-        {
-            StoppedBlocking();
-        }
+
     }
 
 
@@ -138,7 +163,7 @@ public class PlayerController : MonoBehaviour
             if (count == 0)
             {
                 rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-                
+
 
                 return true;
 
@@ -153,6 +178,16 @@ public class PlayerController : MonoBehaviour
             return false;
         }
     }
+    public void swordEquipped()
+    {
+        _swordEquipped = true;
+    }
+
+    public void shieldEquipped()
+    {
+        _shieldEquipped = true;
+    }
+
 
     public void Blocking()
     {

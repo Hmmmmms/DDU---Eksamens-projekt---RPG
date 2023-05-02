@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour, ICollectable
 {
+    public static event Action ShieldEquipped;
+
     public static event HandleShieldCollected OnShieldCollected;
     public delegate void HandleShieldCollected(ItemData itemData);
     public ItemData ShieldData;
@@ -15,5 +17,6 @@ public class Shield : MonoBehaviour, ICollectable
         Destroy(gameObject);
 
         OnShieldCollected?.Invoke(ShieldData);
+        ShieldEquipped?.Invoke();
     }
 }

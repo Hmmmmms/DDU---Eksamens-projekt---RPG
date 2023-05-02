@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour, ICollectable
 {
+    public static event Action SwordEquipped;
+
     public static event HandleSwordCollected OnSwordCollected;
     public delegate void HandleSwordCollected(ItemData itemData);
     public ItemData SwordData;
@@ -15,7 +17,7 @@ public class Sword : MonoBehaviour, ICollectable
         Destroy(gameObject);
 
         OnSwordCollected?.Invoke(SwordData);
-
+        SwordEquipped?.Invoke();
 
     }
 }
