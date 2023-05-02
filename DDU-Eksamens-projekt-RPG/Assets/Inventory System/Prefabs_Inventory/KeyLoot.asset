@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 055df45b6cef49242b69bb947fc44686, type: 3}
-  m_Name: LootShield
+  m_Name: KeyLoot
   m_EditorClassIdentifier: 
-  lootData: {fileID: 0}
-  dropchance: 0
+  LootPrefab: {fileID: 2380403121475941896, guid: e86c2c2b3c0f16344a31c9e7ec604df6, type: 3}
+  dropchance: 100

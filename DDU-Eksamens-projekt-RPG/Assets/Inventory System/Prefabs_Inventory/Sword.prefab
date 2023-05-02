@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &507953670231899760
 SpriteRenderer:
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.055
+  m_Radius: 0.05
 --- !u!114 &507953670231899774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,4 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b45fb7d6dba3a4db9316b7d47438bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwordData: {fileID: 0}
+  SwordData: {fileID: 11400000, guid: b23ce65d825892d4a9579a7eafda9643, type: 2}

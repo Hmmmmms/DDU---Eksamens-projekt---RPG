@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LootBag : MonoBehaviour
 {
-    public GameObject droppedItemPrefab;
     public List<Loot> lootlist = new List<Loot>();
 
     Loot GetDroppedItem()
@@ -26,13 +26,13 @@ public class LootBag : MonoBehaviour
         Debug.Log("No loot dropped");
         return null;
     }
-    public void InstantiateLoot(Vector3 spawnPosition)
+    public void InstantiateLoot(Vector2 spawnPosition)
     {
         Loot droppedItem = GetDroppedItem();
-        if(droppedItem != null)
+
+        if (droppedItem != null)
         {
-            GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
-            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.lootSprite;
+                GameObject lootGameObject = Instantiate(droppedItem.LootPrefab, spawnPosition, Quaternion.identity);
         }
     }
 }

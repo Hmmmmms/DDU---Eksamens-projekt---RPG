@@ -6,15 +6,12 @@ using static UnityEditor.Progress;
 [CreateAssetMenu]
 public class Loot : ScriptableObject
 {
-    public Sprite lootSprite;
-    public string lootName;
-    public ItemData lootData;
+    public GameObject LootPrefab;
     public int dropchance;
 
-    public Loot(string lootName, Sprite lootSprite,  int dropchance)
+    public Loot(GameObject LootPrefab, int dropchance)
     {
-        this.lootSprite = lootData.icon;
-        this.lootName = lootData.displayName;
+        this.LootPrefab = LootPrefab;
         this.dropchance = dropchance;
     }
 }

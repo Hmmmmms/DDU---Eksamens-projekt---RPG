@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 405159119626664053}
   - component: {fileID: 2813845466397990970}
   - component: {fileID: 3175219037784951844}
+  - component: {fileID: 8426500545793884369}
   m_Layer: 0
   m_Name: Slime
   m_TagString: slime
@@ -160,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTurnInvincible: 0
+  dropLoot: 1
   invincibilityTime: 0.25
   isAlive: 1
   canMove: 1
@@ -193,3 +195,18 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &8426500545793884369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39904259707302920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf37882dc02fa849a6ca2ad2c3077a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootlist:
+  - {fileID: 11400000, guid: 2a363ff7d1176dc428b69b925cddd4c7, type: 2}
+  - {fileID: 11400000, guid: 174f6692ef8d47247ab4213f817985eb, type: 2}

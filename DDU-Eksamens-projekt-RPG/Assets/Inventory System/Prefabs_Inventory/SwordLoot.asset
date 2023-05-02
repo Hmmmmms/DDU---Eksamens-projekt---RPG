@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 055df45b6cef49242b69bb947fc44686, type: 3}
-  m_Name: LootSword
+  m_Name: SwordLoot
   m_EditorClassIdentifier: 
-  lootData: {fileID: 0}
-  dropchance: 0
+  LootPrefab: {fileID: 507953670231899773, guid: 6f732f083a2ddc0418c6d593563f3a94, type: 3}
+  dropchance: 100

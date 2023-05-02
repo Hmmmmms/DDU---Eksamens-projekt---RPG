@@ -41,16 +41,16 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
             if (health <= 0)
             {
+                if (dropLoot)
+                {
+                    GetComponent<LootBag>().InstantiateLoot(transform.position + SlimeOffsetY);
+                }
                 //Maybe not needed
                 Targetable = false;
 
                 isAlive = false;
 
                 Defeated();
-                if (dropLoot)
-                {
-                    GetComponent<LootBag>().InstantiateLoot(transform.position);
-                }
             }
         }
         get { return health; }
