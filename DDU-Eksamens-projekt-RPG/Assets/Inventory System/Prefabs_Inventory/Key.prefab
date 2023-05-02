@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2380403121475941894}
   - component: {fileID: 2380403121475941895}
   m_Layer: 0
-  m_Name: Mana Potion
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2380403121475941896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.602, y: 0.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.559, y: -0.634, z: -0.002239028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2380403121475941893
 SpriteRenderer:
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ad166d011e6c94840abfb8a442a85a87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f826fc3894f45d44ba9de52e3174a510, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,4 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61d7f6dd8d456e4dbc7397d933031a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManaPotionData: {fileID: 0}
+  KeyData: {fileID: 11400000, guid: ea6ec2dcc8bd9b2498e38fba473d6550, type: 2}

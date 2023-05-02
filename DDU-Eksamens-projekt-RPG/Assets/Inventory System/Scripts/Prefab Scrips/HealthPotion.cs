@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class HealthPotion : MonoBehaviour, ICollectable
 {
+    public static event Action OnPickupAddPotionToPotions;
+
     public static event HandleHealthPotionCollected OnHealthPotionCollected;
     public delegate void HandleHealthPotionCollected(ItemData itemData);
+    
+
     public ItemData HealthPotionData;
 
     public void Collect()
@@ -15,6 +19,7 @@ public class HealthPotion : MonoBehaviour, ICollectable
         Destroy(gameObject);
 
         OnHealthPotionCollected?.Invoke(HealthPotionData);
+        OnPickupAddPotionToPotions?.Invoke();
     }
 
 }

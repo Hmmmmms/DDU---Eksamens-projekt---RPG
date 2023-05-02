@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject slotPrefab;
     public List<InventorySlots> _inventorySlots = new List<InventorySlots>(6);
 
-    public bool isActiveAndEnabled = true;
+    public bool isActiveAndEnabled;
 
     private void OnEnable()
     {
@@ -64,7 +64,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Show()
     {
-        isActiveAndEnabled = true;
+        
         Image inventoryPanel = transform.GetComponent<Image>();
         inventoryPanel.enabled = true;
 
@@ -72,15 +72,13 @@ public class InventoryManager : MonoBehaviour
         foreach (Transform childtransform in transform)
         {
             childtransform.gameObject.SetActive(true);
-            //Image _childobjects = childtransform.GetComponent<Image>();
-            //_childobjects.enabled = true;
         }
-
+        isActiveAndEnabled = true;
     }
 
     public void Hide()
     {
-        isActiveAndEnabled = false;
+        
         Image inventoryPanel = transform.GetComponent<Image>();
         inventoryPanel.enabled = false;
 
@@ -88,9 +86,8 @@ public class InventoryManager : MonoBehaviour
         foreach (Transform childtransform in transform)
         {
             childtransform.gameObject.SetActive(false);
-            //Image _childobjects = childtransform.GetComponent<Image>();
-            //_childobjects.enabled = false;
         }
+        isActiveAndEnabled = false;
     }
 
 }

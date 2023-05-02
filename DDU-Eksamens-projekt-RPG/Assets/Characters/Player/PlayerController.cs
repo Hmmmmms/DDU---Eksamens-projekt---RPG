@@ -13,6 +13,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", isMoving);
         }
     }
+    public bool IsBlocking 
+    { 
+        set 
+        {
+            isBlocking = value;
+            animator.SetBool("isBlocking", isBlocking);
+        } 
+    }
 
     private Vector2 moveInput = Vector2.zero;
 
@@ -22,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    DamagableCharacter _damageableCharacter;
+
     public float idleFriction = 0.9f;
 
     public float moveSpeed = 500f;
@@ -29,6 +39,8 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
 
     private bool isMoving = false;
+
+    private bool isBlocking = false;
 
     public float collisionOffset = 0.05f;
 
@@ -38,12 +50,15 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        _damageableCharacter = GetComponent<DamagableCharacter>();
         animator.SetFloat("Last_Horizontal", 1);
         animator.SetFloat("Last_Vertical", 0);
     }
@@ -97,6 +112,15 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("swordAttack");
         }
+
+        if (Input.GetKey(KeyCode.B))
+        {
+            Blocking();
+        }
+        if(Input.GetKeyUp(KeyCode.B))
+        {
+            StoppedBlocking();
+        }
     }
 
 
@@ -128,6 +152,19 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void Blocking()
+    {
+        LockMovement();
+        IsBlocking = true;
+        _damageableCharacter.Invincible = true;
+    }
+    public void StoppedBlocking()
+    {
+        UnlockLockMovement();
+        IsBlocking = false;
+        _damageableCharacter.Invincible = false;
     }
 
     public void LockMovement()

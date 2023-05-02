@@ -15,14 +15,18 @@ public class Inventory : MonoBehaviour
     private void OnEnable()
     {
         HealthPotion.OnHealthPotionCollected += Add;
-        ManaPotion.OnManaPotionCollected += Add;
+        InventoryController.OnHealthPotionUsed += remove;
+
+        Key.OnKeyCollected += Add;
         Sword.OnSwordCollected += Add;
         Shield.OnShieldCollected += Add;
     }
     private void OnDisable()
     {
         HealthPotion.OnHealthPotionCollected -= Add;
-        ManaPotion.OnManaPotionCollected -= Add;
+        InventoryController.OnHealthPotionUsed -= remove;
+
+        Key.OnKeyCollected -= Add;
         Sword.OnSwordCollected -= Add;
         Shield.OnShieldCollected -= Add;
     }
@@ -33,7 +37,6 @@ public class Inventory : MonoBehaviour
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
             item.AddToStack();
-            Debug.Log($"{item.itemData.displayName} total stack is now {item.stackSize}");
             OnInventoryChange?.Invoke(inventory);
         }
         else
@@ -41,7 +44,6 @@ public class Inventory : MonoBehaviour
             InventoryItem newItem = new InventoryItem(itemData);
             inventory.Add(newItem);
             itemDictionary.Add(itemData, newItem);
-            Debug.Log($"Added {itemData.displayName} to the inventory for the first time");
             OnInventoryChange?.Invoke(inventory);
         }
     }

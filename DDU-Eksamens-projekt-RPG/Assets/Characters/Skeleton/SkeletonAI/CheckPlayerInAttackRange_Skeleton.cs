@@ -22,14 +22,17 @@ public class CheckPlayerInAttackRange_Skeleton : Node
             state = NodeState.FAILURE;
             return state;
         }
-
-        Transform target = (Transform)t;
-        if (Vector2.Distance(_transform.position, (target.position - (DamagableCharacter.PlayerOffsetY - DamagableCharacter.SkeletonOffsetY))) <= SkeletonBT.attackRange)
+        else
         {
+            Transform target = (Transform)t;
+            if (Vector2.Distance(_transform.position, (target.position - (DamagableCharacter.PlayerOffsetY - DamagableCharacter.SkeletonOffsetY))) <= SkeletonBT.attackRange)
+            {
 
-            state = NodeState.SUCCESS;
-            return state;
+                state = NodeState.SUCCESS;
+                return state;
+            }
         }
+        
 
         state = NodeState.FAILURE;
         return state;

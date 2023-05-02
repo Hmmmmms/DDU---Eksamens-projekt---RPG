@@ -52,13 +52,16 @@ public class SkeletonSword_Hitbox : MonoBehaviour
             //Deal damage to enemy
             damageableObject.OnHit(swordDamage, knockback);
 
-            //Instantiate damage text at the place where damage is being taken
-            RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
-            textTransform.transform.position = Camera.main.WorldToScreenPoint(collider.gameObject.transform.position);
+            
+                //Instantiate damage text at the place where damage is being taken
+                RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
+                textTransform.transform.position = Camera.main.WorldToScreenPoint(collider.gameObject.transform.position);
 
 
-            Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-            textTransform.SetParent(canvas.transform);
+                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+                textTransform.SetParent(canvas.transform);
+            
+            
 
         }
 

@@ -15,5 +15,7 @@ public class Sword : MonoBehaviour, ICollectable
         Destroy(gameObject);
 
         OnSwordCollected?.Invoke(SwordData);
+
+
     }
 }

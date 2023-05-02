@@ -32,6 +32,8 @@ public class TaskAttack_Skeleton : Node
             
             if (_damagableCharacterEnemy.isAlive == true)
             {
+                if (attackTimer <= 0f) { attackTimer = 1f; }
+
                 //wait for attack
                 if (attackTimer > 0f)
                 {
@@ -39,7 +41,7 @@ public class TaskAttack_Skeleton : Node
                     if (attackTimer <= 0f)
                     {
                         _animator.SetTrigger("Skeleton_attack");
-                        attackTimer = 0.4f; // reset cooldown
+                        attackTimer = 0f; // reset cooldown
                     }
                 }
             }
