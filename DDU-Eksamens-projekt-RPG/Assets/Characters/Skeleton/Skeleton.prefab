@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa799a9a6c61a914ab817cad34a11212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 5632195745118340728, guid: 4aeb2a1bf33ce2f46a5db5e371671aad, type: 3}
+  damageText: {fileID: 5632195745118340728, guid: 4aeb2a1bf33ce2f46a5db5e371671aad, type: 3}
   swordDamage: 2
 --- !u!70 &6114729378184717571
 CapsuleCollider2D:
@@ -100,7 +100,7 @@ Transform:
   - {fileID: 3678092418407332033}
   - {fileID: 2418602398263635030}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &480694743322511175
 SpriteRenderer:
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa799a9a6c61a914ab817cad34a11212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 5632195745118340728, guid: 4aeb2a1bf33ce2f46a5db5e371671aad, type: 3}
+  damageText: {fileID: 5632195745118340728, guid: 4aeb2a1bf33ce2f46a5db5e371671aad, type: 3}
   swordDamage: 2
 --- !u!70 &7305388417287594670
 CapsuleCollider2D:

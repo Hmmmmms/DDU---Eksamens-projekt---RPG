@@ -14,6 +14,8 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
     public bool canTurnInvincible = false;
 
+    public bool dropLoot = false;
+
     public float invincibilityTime = 0.25f;
 
     public bool isAlive = true;
@@ -45,6 +47,10 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
                 isAlive = false;
 
                 Defeated();
+                if (dropLoot)
+                {
+                    GetComponent<LootBag>().InstantiateLoot(transform.position);
+                }
             }
         }
         get { return health; }

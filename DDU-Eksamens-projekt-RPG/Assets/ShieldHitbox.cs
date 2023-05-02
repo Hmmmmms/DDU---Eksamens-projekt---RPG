@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ShieldHitbox : MonoBehaviour
@@ -42,9 +43,8 @@ public class ShieldHitbox : MonoBehaviour
 
             //Deal damage to enemy
             damageableObject.OnHit(ShieldDamage, knockback);
-            
+
+
         }
-
-
     }
 }

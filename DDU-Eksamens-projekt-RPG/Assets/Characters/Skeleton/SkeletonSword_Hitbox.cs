@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SkeletonSword_Hitbox : MonoBehaviour
 {
-    public GameObject healthText;
+    public GameObject damageText;
 
     Collider2D SkeletonswordCollider;
 
@@ -54,7 +54,7 @@ public class SkeletonSword_Hitbox : MonoBehaviour
 
             
                 //Instantiate damage text at the place where damage is being taken
-                RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
+                RectTransform textTransform = Instantiate(damageText).GetComponent<RectTransform>();
                 textTransform.transform.position = Camera.main.WorldToScreenPoint(collider.gameObject.transform.position);
 
 

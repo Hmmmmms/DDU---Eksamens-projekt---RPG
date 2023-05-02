@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     DamagableCharacter _damageableCharacter;
 
+    public StaminaBar staminaBar;
+
     public float idleFriction = 0.9f;
 
     public float moveSpeed = 500f;
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         _damageableCharacter = GetComponent<DamagableCharacter>();
+        staminaBar = GetComponent<StaminaBar>();
         animator.SetFloat("Last_Horizontal", 1);
         animator.SetFloat("Last_Vertical", 0);
         _swordEquipped = false;
@@ -124,28 +127,57 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_swordEquipped == true)
+        if (_damageableCharacter.isAlive == true)
         {
-            //Sword Attack
-            if ((Input.GetMouseButtonDown(0)) || (Input.GetKeyDown("space")))
+            if (_swordEquipped == true)
             {
-                animator.SetTrigger("swordAttack");
+                //Sword Attack
+                if ((Input.GetMouseButtonDown(0)) || (Input.GetKeyDown("space")))
+                {
+                    animator.SetTrigger("swordAttack");
+                }
+            }
+
+            if (_shieldEquipped == true)
+            {
+                //Block With Shield
+                if ((Input.GetMouseButton(1)) || Input.GetKey(KeyCode.LeftControl))
+                {
+                    if (staminaBar.CanUseStamina == true)
+                    {
+                        Blocking();
+                        staminaBar.DecreaseEnergy();
+                    }
+                    else
+                    {
+                        StoppedBlocking();
+                    }
+
+                }
+                if ((Input.GetMouseButtonUp(1)) || Input.GetKeyUp(KeyCode.LeftControl))
+                {
+                    StoppedBlocking();
+                }
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) && staminaBar.CanUseStamina == true)
+            {
+                if (staminaBar.CanUseStamina == true)
+                {
+                    moveSpeed = 1000f;
+                    staminaBar.DecreaseEnergy();
+                }
+                else
+                {
+                    moveSpeed = 500f;
+                }
+
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                moveSpeed = 500f;
             }
         }
-
-        if (_shieldEquipped == true)
-        {
-            //Block With Shield
-            if (Input.GetKey(KeyCode.B))
-            {
-                Blocking();
-            }
-            if (Input.GetKeyUp(KeyCode.B))
-            {
-                StoppedBlocking();
-            }
-        }
-
     }
 
 

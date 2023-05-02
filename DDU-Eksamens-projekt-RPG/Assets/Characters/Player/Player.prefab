@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  damageText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
   swordDamage: 3
 --- !u!1 &809017284
 GameObject:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  damageText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
   swordDamage: 3
 --- !u!1 &1588337234
 GameObject:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  damageText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
   swordDamage: 3
 --- !u!1 &3521876226522860064
 GameObject:
@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 665819085}
   - component: {fileID: 665819086}
   - component: {fileID: 665819093}
+  - component: {fileID: 1271458666}
   m_Layer: 6
   m_Name: Player
   m_TagString: player
@@ -328,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d4093e0c9d14f4fbe376f3d03d5cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaBar: {fileID: 1271458666}
   idleFriction: 0.9
   moveSpeed: 250
   maxSpeed: 0.5
@@ -469,6 +471,25 @@ MonoBehaviour:
   - {fileID: 0}
   fullHeart: {fileID: 133982719826790466, guid: be981ef15bdb8b0459525c94f59f3339, type: 3}
   emptyHeart: {fileID: 8893786113882650503, guid: be981ef15bdb8b0459525c94f59f3339, type: 3}
+--- !u!114 &1271458666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521876226522860064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aafa73d0cdff8a40ab516e612df0e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stamina: 4
+  maxStamina: 4
+  CanUseStamina: 1
+  _staminaBar: {fileID: 0}
+  _staminaBarFill: {fileID: 0}
+  DepletedStaminaColor: {r: 0.7019608, g: 0.6666667, b: 0.9215687, a: 1}
+  decresValue: 3.8
 --- !u!1 &4970907546584824573
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff3db21fa0a94f4f8b29f542393bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
+  damageText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
   swordDamage: 3
 --- !u!1 &7578657757288987927
 GameObject:

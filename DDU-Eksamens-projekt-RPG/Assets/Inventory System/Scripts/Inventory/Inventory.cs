@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour
         InventoryController.OnHealthPotionUsed += remove;
 
         Key.OnKeyCollected += Add;
+        Brick.OnBrickCollected += Add;
+
         Sword.OnSwordCollected += Add;
         Shield.OnShieldCollected += Add;
     }
@@ -27,6 +29,8 @@ public class Inventory : MonoBehaviour
         InventoryController.OnHealthPotionUsed -= remove;
 
         Key.OnKeyCollected -= Add;
+        Brick.OnBrickCollected -= Add;
+
         Sword.OnSwordCollected -= Add;
         Shield.OnShieldCollected -= Add;
     }

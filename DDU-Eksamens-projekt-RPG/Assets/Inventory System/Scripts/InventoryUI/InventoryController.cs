@@ -16,6 +16,8 @@ public class InventoryController : MonoBehaviour
 
     public DamagableCharacter playerDamagableCharacter;
 
+    
+
     public HearthHealth MaxHealth;
 
     public ItemData HealthPotionData;
@@ -38,44 +40,54 @@ public class InventoryController : MonoBehaviour
         playerDamagableCharacter = GetComponent<DamagableCharacter>();
         _inventoryAcces = GetComponent<Inventory>();
         MaxHealth = GetComponent<HearthHealth>();
-        inventoryUI.isActiveAndEnabled = false;
+        inventoryUI.isEnabled = false;
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (playerDamagableCharacter.isAlive == true)
         {
-            if (inventoryUI.isActiveAndEnabled == false)
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                inventoryUI.Show();
+                if (inventoryUI.isEnabled == false)
+                {
+                    inventoryUI.Show();
 
+                }
+                else
+                {
+                    inventoryUI.Hide();
+                }
             }
-            else
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                inventoryUI.Hide();
+                if (numOfHealthPotions > 0 && playerDamagableCharacter.health != MaxHealth.numOfHearts)
+                {
+
+                    RemovenumOfHealthPotions();
+                    playerDamagableCharacter.health++;
+
+                    OnHealthPotionUsed?.Invoke(HealthPotionData);
+                }
+                else
+                {
+                    if (numOfHealthPotions == 0)
+                    {
+                        Debug.Log("No Health Potions");
+                    }
+                    if (playerDamagableCharacter.health == MaxHealth.numOfHearts)
+                    {
+                        Debug.Log("Already max Health");
+                    }
+
+                }
             }
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        else
         {
-            if (numOfHealthPotions > 0 && playerDamagableCharacter.health != MaxHealth.numOfHearts && playerDamagableCharacter.isAlive == true)
+            if (inventoryUI.isEnabled == true)
             {
-
-                RemovenumOfHealthPotions();
-                playerDamagableCharacter.health++;
-
-                OnHealthPotionUsed?.Invoke(HealthPotionData);
-            }
-            else
-            {
-                if (numOfHealthPotions == 0)
-                {
-                    Debug.Log("No Health Potions");
-                }
-                if (playerDamagableCharacter.health == MaxHealth.numOfHearts)
-                {
-                    Debug.Log("Already max Health");
-                }
-
+                inventoryUI.Hide();
             }
         }
     }
