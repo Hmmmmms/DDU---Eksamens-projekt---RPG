@@ -8,20 +8,28 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI DialogueText;
+    public TextMeshProUGUI ContinueText;
 
     public Animator animator;
 
     private Queue<string> sentences;
+
+    private NPCDropLoot NPCdroploot;
+
     void Start()
     {
         sentences = new Queue<string>();
     }
 
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (Dialogue dialogue, NPCDropLoot NPCdropLoot)
     {
+        NPCdroploot = NPCdropLoot;
+
         animator.SetBool("IsOpen", true);
-        
+
+        ContinueText.text = ("Press Enter To Continue ");
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -30,12 +38,15 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
     }
     
     public void DisplayNextSentence()
     {
+        if (sentences.Count == 1)
+        {
+            ContinueText.text = ("Press Enter To Exit ");
+        }
         if(sentences.Count == 0)
         {
             EndDialogue();
@@ -60,6 +71,8 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        NPCdroploot.NPCdropLoot();
         animator.SetBool("IsOpen", false);
+        FindObjectOfType<PlayerController>().DialogueOff();
     }
 }

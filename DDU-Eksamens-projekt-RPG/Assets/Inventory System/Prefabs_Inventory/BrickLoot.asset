@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BrickLoot
   m_EditorClassIdentifier: 
   LootPrefab: {fileID: 8079144231467454564, guid: 7983287ddb567d14897301c9abcb80ce, type: 3}
-  dropchance: 40
+  dropchance: 100

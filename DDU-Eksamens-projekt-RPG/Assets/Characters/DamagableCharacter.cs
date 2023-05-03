@@ -91,6 +91,8 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
     bool _invincible = false;
 
+    bool _DialogueInviciblity = false;
+
     //Offset for Skeleton hitbox center compared to sprite center
     public static Vector3 SkeletonOffsetY = new Vector3(0.0f, 0.16f, 0.0f);
 
@@ -120,7 +122,7 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage)
     {
-        if (!Invincible)
+        if (!Invincible && !_DialogueInviciblity)
         {
             Health -= damage;
         }
@@ -133,7 +135,7 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        if (!Invincible)
+        if (!Invincible && !_DialogueInviciblity)
         {
             Health -= damage;
             //Apply force to slime
@@ -148,6 +150,7 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
     public void FixedUpdate()
     {
+        //Become Invincible right after hit
         if (Invincible)
         {
             invincibleTimeElapsed += Time.deltaTime;
@@ -169,4 +172,12 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
         canMove = true;
     }
 
+    public void ToggleInvincibleEnabled()
+    {
+        _DialogueInviciblity = true;
+    }
+    public void ToggleInvincibleDisabled()
+    {
+        _DialogueInviciblity = false;
+    }
 }

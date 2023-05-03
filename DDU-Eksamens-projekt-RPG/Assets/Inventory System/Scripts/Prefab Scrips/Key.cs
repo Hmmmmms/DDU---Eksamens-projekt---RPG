@@ -9,11 +9,14 @@ public class Key : MonoBehaviour, ICollectable
     public delegate void HandleKeyCollected(ItemData itemData);
     public ItemData KeyData;
 
+    public static event Action OnDoorKeyAcquired;
+
     public void Collect()
     {
 
         Destroy(gameObject);
 
         OnKeyCollected?.Invoke(KeyData);
+        OnDoorKeyAcquired?.Invoke();
     }
 }

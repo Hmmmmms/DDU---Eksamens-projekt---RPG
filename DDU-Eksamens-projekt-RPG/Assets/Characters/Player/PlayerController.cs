@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
     DamagableCharacter _damageableCharacter;
 
+    public SpriteRenderer InteractNotify;
+
     public StaminaBar staminaBar;
 
     public float idleFriction = 0.9f;
@@ -55,6 +58,19 @@ public class PlayerController : MonoBehaviour
     bool _swordEquipped = false;
     bool _shieldEquipped = false;
 
+    bool _dialogueActive = false;
+
+
+    private void OnEnable()
+    {
+        Sword.SwordEquipped += swordEquipped;
+        Shield.ShieldEquipped += shieldEquipped;
+    }
+    private void OnDisable()
+    {
+        Sword.SwordEquipped -= swordEquipped;
+        Shield.ShieldEquipped -= shieldEquipped;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -88,7 +104,7 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Last_Vertical", moveInput.y);
         }
 
-        if (canMove == true && moveInput != Vector2.zero)
+        if (canMove == true && moveInput != Vector2.zero && !_dialogueActive)
         {
             //If movement input is not 0, try to move
             rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime);
@@ -112,24 +128,11 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
-    private void OnEnable()
-    {
-        Sword.SwordEquipped += swordEquipped;
-        Shield.ShieldEquipped += shieldEquipped;
-    }
-
-    private void OnDisable()
-    {
-        Sword.SwordEquipped -= swordEquipped;
-        Shield.ShieldEquipped -= shieldEquipped;
-    }
-
     private void Update()
     {
         if (_damageableCharacter.isAlive == true)
         {
-            if (_swordEquipped == true)
+            if (_swordEquipped == true && !_dialogueActive)
             {
                 //Sword Attack
                 if ((Input.GetMouseButtonDown(0)) || (Input.GetKeyDown("space")))
@@ -138,7 +141,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (_shieldEquipped == true)
+            if (_shieldEquipped == true && !_dialogueActive)
             {
                 //Block With Shield
                 if ((Input.GetMouseButton(1)) || Input.GetKey(KeyCode.LeftControl))
@@ -160,7 +163,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.LeftShift) && staminaBar.CanUseStamina == true)
+            if (Input.GetKey(KeyCode.LeftShift) && !_dialogueActive)
             {
                 if (staminaBar.CanUseStamina == true)
                 {
@@ -225,13 +228,13 @@ public class PlayerController : MonoBehaviour
     {
         LockMovement();
         IsBlocking = true;
-        _damageableCharacter.Invincible = true;
+        _damageableCharacter.ToggleInvincibleEnabled();
     }
     public void StoppedBlocking()
     {
         UnlockLockMovement();
         IsBlocking = false;
-        _damageableCharacter.Invincible = false;
+        _damageableCharacter.ToggleInvincibleDisabled();
     }
 
     public void LockMovement()
@@ -243,4 +246,27 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
+
+    public void DialogueOn()
+    {
+        _dialogueActive = true;
+        IsBlocking = false;
+        _damageableCharacter.ToggleInvincibleEnabled();
+    }
+
+    public void DialogueOff()
+    {
+        _dialogueActive = false;
+        _damageableCharacter.ToggleInvincibleDisabled();
+    }
+
+    public void NotifyPlayer()
+    {
+        InteractNotify.enabled = true;
+    }
+    public void DeNotifyPlayer()
+    {
+        InteractNotify.enabled = false;
+    }
+
 }

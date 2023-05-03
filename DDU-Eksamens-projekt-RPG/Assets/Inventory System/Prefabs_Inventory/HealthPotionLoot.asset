@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HealthPotionLoot
   m_EditorClassIdentifier: 
   LootPrefab: {fileID: 149794439478485035, guid: 7e64faa03bd39af4697398e31e19ec2f, type: 3}
-  dropchance: 40
+  dropchance: 100

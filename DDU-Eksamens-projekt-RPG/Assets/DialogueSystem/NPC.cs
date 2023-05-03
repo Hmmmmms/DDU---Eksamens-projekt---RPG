@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public NPCDropLoot NPCdropLoot;
 
+    public Dialogue dialogue;
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, NPCdropLoot);
+        FindObjectOfType<PlayerController>().DialogueOn();
     }
+    
 }

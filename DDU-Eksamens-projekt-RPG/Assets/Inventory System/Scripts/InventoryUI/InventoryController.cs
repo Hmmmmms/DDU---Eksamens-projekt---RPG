@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    public static event HandleHealthPotionUsed OnHealthPotionUsed;
-    public delegate void HandleHealthPotionUsed(ItemData itemData);
-
     [SerializeField]
     private InventoryManager inventoryUI;
 
@@ -16,23 +13,37 @@ public class InventoryController : MonoBehaviour
 
     public DamagableCharacter playerDamagableCharacter;
 
-    
 
+
+    
+    //HealthPotion consumption Variables
     public HearthHealth MaxHealth;
 
     public ItemData HealthPotionData;
 
     private int numOfHealthPotions = 0;
+    public static event HandleHealthPotionUsed OnHealthPotionUsed;
+    public delegate void HandleHealthPotionUsed(ItemData itemData);
+
+    //DoorKey Variables
+    public int keyCount;
+
+    public ItemData DoorKeyData;
+
+    public static event HandleDoorKeyDataUsed OnDoorKeyUsed;
+    public delegate void HandleDoorKeyDataUsed(ItemData itemData);
 
     private void OnEnable()
     {
         HealthPotion.OnPickupAddPotionToPotions += AddnumOfHealthPotions;
-        
+        Key.OnDoorKeyAcquired += AddDoorKey;
+
+
     }
     private void OnDisable()
     {
         HealthPotion.OnPickupAddPotionToPotions -= AddnumOfHealthPotions;
-
+        Key.OnDoorKeyAcquired -= AddDoorKey;
     }
 
     public void Start()
@@ -47,6 +58,7 @@ public class InventoryController : MonoBehaviour
     {
         if (playerDamagableCharacter.isAlive == true)
         {
+            //InventoryUI toggle
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (inventoryUI.isEnabled == false)
@@ -59,6 +71,7 @@ public class InventoryController : MonoBehaviour
                     inventoryUI.Hide();
                 }
             }
+            //HealthPotion Consumption
             if (Input.GetKeyDown(KeyCode.C))
             {
                 if (numOfHealthPotions > 0 && playerDamagableCharacter.health != MaxHealth.numOfHearts)
@@ -83,6 +96,9 @@ public class InventoryController : MonoBehaviour
                 }
             }
         }
+
+        //Key Aquired
+
         else
         {
             if (inventoryUI.isEnabled == true)
@@ -100,5 +116,17 @@ public class InventoryController : MonoBehaviour
     public void RemovenumOfHealthPotions()
     {
         numOfHealthPotions--;
+    }
+
+    public void AddDoorKey()
+    {
+        keyCount++;
+        Debug.Log("DoorKey acquired");
+    }
+
+    public void UseDoorKey()
+    {
+        keyCount--;
+        OnDoorKeyUsed?.Invoke(DoorKeyData);
     }
 }

@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2149524583507377284
 SpriteRenderer:
@@ -208,5 +208,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootlist:
-  - {fileID: 11400000, guid: 2a363ff7d1176dc428b69b925cddd4c7, type: 2}
   - {fileID: 11400000, guid: 174f6692ef8d47247ab4213f817985eb, type: 2}
+  - {fileID: 11400000, guid: 2a363ff7d1176dc428b69b925cddd4c7, type: 2}

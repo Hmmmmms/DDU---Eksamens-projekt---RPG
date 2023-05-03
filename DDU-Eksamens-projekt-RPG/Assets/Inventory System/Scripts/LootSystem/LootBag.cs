@@ -7,18 +7,20 @@ public class LootBag : MonoBehaviour
 {
     public List<Loot> lootlist = new List<Loot>();
 
+    public static Vector3 lootDropOffset = new Vector3(0.0f, 0.1f, 0.0f);
+
     Loot GetDroppedItem()
     {
         int randomNumber = Random.Range(1, 101); //1-100 chance;
-            List<Loot> possibleItems = new List<Loot>();
+        List<Loot> possibleItems = new List<Loot>();
         foreach (Loot item in lootlist)
         {
-            if(randomNumber <= item.dropchance)
+            if (randomNumber <= item.dropchance)
             {
                 possibleItems.Add(item);
             }
         }
-        if(possibleItems.Count > 0)
+        if (possibleItems.Count > 0)
         {
             Loot droppedItem = possibleItems[Random.Range(0, possibleItems.Count)];
             return droppedItem;
@@ -32,7 +34,11 @@ public class LootBag : MonoBehaviour
 
         if (droppedItem != null)
         {
-                GameObject lootGameObject = Instantiate(droppedItem.LootPrefab, spawnPosition, Quaternion.identity);
+            
+
+            GameObject lootGameObject = Instantiate(droppedItem.LootPrefab, spawnPosition, Quaternion.identity);
         }
     }
+
+
 }

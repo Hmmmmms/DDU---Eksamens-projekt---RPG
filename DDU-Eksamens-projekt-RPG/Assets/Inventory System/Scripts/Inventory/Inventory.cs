@@ -18,10 +18,13 @@ public class Inventory : MonoBehaviour
         InventoryController.OnHealthPotionUsed += remove;
 
         Key.OnKeyCollected += Add;
+        InventoryController.OnDoorKeyUsed += remove;
         Brick.OnBrickCollected += Add;
 
         Sword.OnSwordCollected += Add;
         Shield.OnShieldCollected += Add;
+
+        LostHeart.OnLostHeartCollected += Add;
     }
     private void OnDisable()
     {
@@ -29,10 +32,13 @@ public class Inventory : MonoBehaviour
         InventoryController.OnHealthPotionUsed -= remove;
 
         Key.OnKeyCollected -= Add;
+        InventoryController.OnDoorKeyUsed -= remove;
         Brick.OnBrickCollected -= Add;
 
         Sword.OnSwordCollected -= Add;
         Shield.OnShieldCollected -= Add;
+
+        LostHeart.OnLostHeartCollected -= Add;
     }
 
 
