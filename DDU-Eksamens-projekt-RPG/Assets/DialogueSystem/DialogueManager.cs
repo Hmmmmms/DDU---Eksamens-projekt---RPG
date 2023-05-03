@@ -12,12 +12,14 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
+    private Queue<string> names;
     private Queue<string> sentences;
 
     private NPCDropLoot NPCdroploot;
 
     void Start()
     {
+        names = new Queue<string>();
         sentences = new Queue<string>();
     }
 
@@ -26,11 +28,16 @@ public class DialogueManager : MonoBehaviour
     {
         NPCdroploot = NPCdropLoot;
 
-        animator.SetBool("IsOpen", true);
+        animator.SetBool("IsOpen", true);   
 
         ContinueText.text = ("Press Enter To Continue ");
 
-        nameText.text = dialogue.name;
+        names.Clear();
+
+        foreach (string name in dialogue.name)
+        {
+            names.Enqueue(name);
+        }
 
         sentences.Clear();
 
@@ -52,6 +59,9 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+
+        string name = names.Dequeue();
+        nameText.text = name;
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();

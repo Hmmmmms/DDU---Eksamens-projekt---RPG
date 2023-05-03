@@ -264,7 +264,7 @@ Transform:
   - {fileID: 8245739723568310935}
   - {fileID: 6897011105760199445}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4024205205913378113
 SpriteRenderer:
@@ -455,7 +455,7 @@ MonoBehaviour:
   MaxHealth: {fileID: 665819093}
   HealthPotionData: {fileID: 11400000, guid: 1f25beba0abf40b45a92570c3ebb3cff, type: 2}
   keyCount: 0
-  DoorKeyData: {fileID: 0}
+  DoorKeyData: {fileID: 11400000, guid: ea6ec2dcc8bd9b2498e38fba473d6550, type: 2}
 --- !u!114 &665819093
 MonoBehaviour:
   m_ObjectHideFlags: 0

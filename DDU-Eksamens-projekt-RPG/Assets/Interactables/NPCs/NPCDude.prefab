@@ -276,10 +276,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCdropLoot: {fileID: 2355909139038006868}
   dialogue:
-    name: NPCDude
+    name:
+    - Farmer
+    - Player
+    - Farmer
     sentences:
     - Hello can you help me with a slime problem...
-    - Some Slimes took over my crops...
+    - Yes of course!
     - Here is a sword which can help you on your travels
 --- !u!114 &4319721101531747817
 MonoBehaviour:

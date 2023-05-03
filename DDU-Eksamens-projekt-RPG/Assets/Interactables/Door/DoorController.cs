@@ -8,6 +8,8 @@ public class DoorController : MonoBehaviour
 
     public Animator animator;
 
+    //public AudioClip doorSoundEffect;
+
     public void OpenDoor(GameObject obj)
     {
         if (!isOpen)
@@ -19,10 +21,16 @@ public class DoorController : MonoBehaviour
                 {
                     isOpen = true;
 
+                    //AudioSource.PlayClipAtPoint(doorSoundEffect, transform.position);
+
                     animator.SetBool("IsOpen", isOpen);
                     manager.UseDoorKey();
                 }
             }
+        }
+        else
+        {
+
         }
     }
 }
