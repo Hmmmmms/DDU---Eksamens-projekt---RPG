@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class DamagableCharacter : MonoBehaviour, IDamageable
 {
 
+    [SerializeField] private AudioSource HitSound;
+
     Animator animator;
 
     Rigidbody2D rb;
@@ -31,7 +33,7 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
         {
             if (value < health)
             {
-                
+                HitSound.Play();
                 animator.SetTrigger("Hit");
 
                 

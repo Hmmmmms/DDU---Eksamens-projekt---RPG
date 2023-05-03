@@ -67,11 +67,12 @@ public class InventoryController : MonoBehaviour
                 if (inventoryUI.isEnabled == false)
                 {
                     inventoryUI.Show();
-
+                    OpenInventorySound.Play();
                 }
                 else
                 {
                     inventoryUI.Hide();
+                    OpenInventorySound.Play();
                 }
             }
             //HealthPotion Consumption

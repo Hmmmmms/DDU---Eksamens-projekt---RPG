@@ -6,6 +6,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private AudioSource AttackSound;
+    float cooldown = 0.3f; //seconds
+    private float lastAttackedAt = -9999f;
+
+    [SerializeField] private AudioSource RunningSound;
+    //Sounds
+
     public bool IsMoving
     {
         set
@@ -110,6 +117,7 @@ public class PlayerController : MonoBehaviour
             //If movement input is not 0, try to move
             rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime);
 
+            
             if (rb.velocity.magnitude > maxSpeed)
             {
                 float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
@@ -126,7 +134,7 @@ public class PlayerController : MonoBehaviour
             IsMoving = false;
         }
 
-
+        if(!isMoving) RunningSound.Play();
 
     }
     private void Update()
@@ -138,6 +146,11 @@ public class PlayerController : MonoBehaviour
                 //Sword Attack
                 if ((Input.GetMouseButtonDown(0)) || (Input.GetKeyDown("space")))
                 {
+                    while (Time.time > lastAttackedAt + cooldown)
+                    {
+                        AttackSound.Play();
+                        lastAttackedAt += cooldown;
+                    }
                     animator.SetTrigger("swordAttack");
                 }
             }

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource DialogueSound;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI DialogueText;
     public TextMeshProUGUI ContinueText;
@@ -50,6 +52,7 @@ public class DialogueManager : MonoBehaviour
     
     public void DisplayNextSentence()
     {
+
         if (sentences.Count == 1)
         {
             ContinueText.text = ("Press Enter To Exit ");
@@ -66,6 +69,8 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+
+        DialogueSound.Play();
 
     }
 
