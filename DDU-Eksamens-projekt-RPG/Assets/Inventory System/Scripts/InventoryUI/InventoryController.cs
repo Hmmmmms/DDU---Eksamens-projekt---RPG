@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
+    [SerializeField] private AudioSource UseKeySound;
+    [SerializeField] private AudioSource UsePotionSound;
+    [SerializeField] private AudioSource OpenInventorySound;
+    //Sounds
+
+
     [SerializeField]
     private InventoryManager inventoryUI;
 
@@ -12,9 +18,6 @@ public class InventoryController : MonoBehaviour
     private Inventory _inventoryAcces; 
 
     public DamagableCharacter playerDamagableCharacter;
-
-
-
     
     //HealthPotion consumption Variables
     public HearthHealth MaxHealth;
@@ -126,6 +129,7 @@ public class InventoryController : MonoBehaviour
 
     public void UseDoorKey()
     {
+        UseKeySound.Play();
         keyCount--;
         OnDoorKeyUsed?.Invoke(DoorKeyData);
     }

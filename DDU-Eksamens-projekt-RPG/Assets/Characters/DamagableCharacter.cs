@@ -181,4 +181,10 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
     {
         _DialogueInviciblity = false;
     }
+
+    public void RestartLevelOnPlayerDeath()
+    {
+        FindObjectOfType<SaveObjsBetweenScenes>().DeleteCharacterOnRestart();
+        SceneManager.LoadScene(0);
+    }
 }
