@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c7a43d7d9674c4389e405804c003cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartOfScenePlayer: {fileID: 0}
-  CurrentScenePlayer: {fileID: 0}
+  StartOfScenePlayer: {fileID: 1205599594}
+  CurrentScenePlayer: {fileID: 1664918639}
 --- !u!1001 &31567630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,6 +1017,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3521876226522860064, guid: 1edd8433174b4c548b7d70e7057ef427, type: 3}
   m_PrefabInstance: {fileID: 3387013802745571801}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &486828150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486828139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d15b3f1c1473f4cb2626a0c4072978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

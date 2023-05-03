@@ -181,9 +181,4 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
     {
         _DialogueInviciblity = false;
     }
-
-    public void RestartLevelOnPlayerDeath()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }

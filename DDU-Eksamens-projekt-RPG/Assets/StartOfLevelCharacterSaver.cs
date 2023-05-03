@@ -8,10 +8,9 @@ public class StartOfLevelCharacterSaver : MonoBehaviour
 
     public GameObject CurrentScenePlayer;
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        
+        StartOfScenePlayer = CurrentScenePlayer;
     }
 
     public void StartAtLevelStartWithLevelStartCharacter()
