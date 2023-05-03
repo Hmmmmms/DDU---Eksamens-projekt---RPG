@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     public bool IsMoving
     {
         set
@@ -84,6 +86,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Last_Vertical", 0);
         _swordEquipped = false;
         _shieldEquipped = false;
+
     }
     private void FixedUpdate()
     {

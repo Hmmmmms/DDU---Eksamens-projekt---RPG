@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorController : MonoBehaviour
 {
@@ -8,13 +9,15 @@ public class DoorController : MonoBehaviour
 
     public Animator animator;
 
+    public int NextLevel;
+
     //public AudioClip doorSoundEffect;
 
-    public void OpenDoor(GameObject obj)
+    public void OpenDoor(InventoryController obj)
     {
         if (!isOpen)
         {
-            InventoryController manager = obj.GetComponent<InventoryController>();
+            InventoryController manager = obj;
             if (manager)
             {
                 if (manager.keyCount > 0)
@@ -30,7 +33,7 @@ public class DoorController : MonoBehaviour
         }
         else
         {
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + NextLevel);
         }
     }
 }

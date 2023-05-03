@@ -219,6 +219,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageText: {fileID: 5632195745118340728, guid: 52e31c31b7c163249991c7667514bf73, type: 3}
   swordDamage: 3
+--- !u!1 &2128424380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128424382}
+  - component: {fileID: 2128424381}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2128424382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128424380}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.51182, y: -0.38849926, z: -0.01125212}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 61044851318689861}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128424381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128424380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df383586b3d979147ab244767b6195a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
 --- !u!1 &3521876226522860064
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,8 +308,9 @@ Transform:
   - {fileID: 375193058}
   - {fileID: 8245739723568310935}
   - {fileID: 6897011105760199445}
+  - {fileID: 2128424382}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4024205205913378113
 SpriteRenderer:
@@ -450,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
-  _inventoryAcces: {fileID: 0}
+  _inventoryAcces: {fileID: 2128424381}
   playerDamagableCharacter: {fileID: 9096880164564953823}
   MaxHealth: {fileID: 665819093}
   HealthPotionData: {fileID: 11400000, guid: 1f25beba0abf40b45a92570c3ebb3cff, type: 2}
