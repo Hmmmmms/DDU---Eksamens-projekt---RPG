@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamagableCharacter : MonoBehaviour, IDamageable
 {
@@ -179,5 +180,10 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
     public void ToggleInvincibleDisabled()
     {
         _DialogueInviciblity = false;
+    }
+
+    public void RestartLevelOnPlayerDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
