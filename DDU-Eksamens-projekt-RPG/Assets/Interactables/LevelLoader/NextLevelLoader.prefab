@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8096064856333711195}
   - component: {fileID: 2167206584620596958}
   - component: {fileID: 3405105700223518347}
+  - component: {fileID: 188190065}
   m_Layer: 0
   m_Name: NextLevelLoader
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7439169775682505479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2044, y: 0.1014, z: 0.011745638}
-  m_LocalScale: {x: 0.30064473, y: 0.30064473, z: 0.30064473}
+  m_LocalScale: {x: 1.4024632, y: 0.89826626, z: 0.89826626}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3348581681782258017}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5529412}
   m_FlipX: 0
@@ -98,6 +99,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9e28006ee524b47b269107385c6368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &188190065
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439169775682505479}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000038146973, y: -0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &8589240665798011230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,7 +125,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1734248968702068970, guid: f999c629bce015f44adf7a89d7c2c6ff, type: 3}
       propertyPath: m_Radius
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5105390770132778696, guid: f999c629bce015f44adf7a89d7c2c6ff, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size

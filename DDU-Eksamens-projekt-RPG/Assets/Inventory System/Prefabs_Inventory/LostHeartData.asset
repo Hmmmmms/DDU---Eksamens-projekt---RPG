@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LostHeartData
   m_EditorClassIdentifier: 
   displayName: LostHeart
-  icon: {fileID: 136305397, guid: 71ffdb27ad1990a4c817676ec900860e, type: 3}
+  icon: {fileID: -666912738, guid: 19abb8f14172aa340928ddd51ac72011, type: 3}

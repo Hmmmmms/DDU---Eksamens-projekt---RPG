@@ -7,6 +7,7 @@ public class NextLevelLoader : MonoBehaviour
 {
     public void LoadNextLevel()
     {
+        FindObjectOfType<PlayerController>().DeNotifyPlayer();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
