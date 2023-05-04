@@ -8,6 +8,8 @@ public class ContinueDialogue : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
 
+    public bool BossScene = false;
+
     public void Update()
     {
         if (isInRange)//If we're in range
@@ -23,7 +25,11 @@ public class ContinueDialogue : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
         {
             isInRange = true;
-            collision.gameObject.GetComponent<PlayerController>().NotifyPlayer();
+            
+            if (!BossScene)
+            {
+                collision.gameObject.GetComponent<PlayerController>().NotifyPlayer();
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -31,7 +37,11 @@ public class ContinueDialogue : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
         {
             isInRange = false;
-            collision.gameObject.GetComponent<PlayerController>().DeNotifyPlayer();
+            if (!BossScene)
+            {
+                collision.gameObject.GetComponent<PlayerController>().DeNotifyPlayer();
+            }
+            
         }
     }
 

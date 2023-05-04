@@ -7,7 +7,7 @@ public class BossRoundEnded : MonoBehaviour
     public Collider2D col;
     void Update()
     {
-        if(DamagableCharacter.enemiesDefeated < 6)
+        if(DamagableCharacter.enemiesDefeated > 6)
         {
             col.enabled = false;
         }

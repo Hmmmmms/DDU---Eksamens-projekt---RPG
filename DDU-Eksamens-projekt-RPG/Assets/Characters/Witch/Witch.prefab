@@ -128,14 +128,10 @@ MonoBehaviour:
     - Witch
     - Finn
     - Witch
-    - Finn
-    - Witch
     sentences:
-    - 'Heeeeeelp! My village have been attacked by evil monsters you must help. '
-    - "Calm down, I can\u2019t understand you, what happened? "
-    - 'Skeletons, they attacked my village, can you help us? '
-    - 'Sure, no problem, but I fear it would be too dangerous for me. '
-    - 'I managed to save this shield, trust me, it will protect you. '
+    - 'muhahahahaha we meet again Finn, have you come back for something, maybe this! '
+    - 'You will pay for what you did. '
+    - "I don\u2019t think so! "
 --- !u!114 &5218199614984792471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +212,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a51634665f03ede4e861b0939adbdcab, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -319,6 +315,7 @@ MonoBehaviour:
   BossRound: 0
   invincibilityTime: 0.25
   isAlive: 1
+  SlimeDropOffset: 0
   canMove: 1
   health: 1
 --- !u!1 &4865948460129132475
@@ -384,6 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInRange: 0
   interactKey: 13
+  BossScene: 1
 --- !u!1 &5668099655836040623
 GameObject:
   m_ObjectHideFlags: 0
