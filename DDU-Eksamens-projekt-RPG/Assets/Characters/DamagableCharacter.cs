@@ -19,11 +19,17 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
     public bool dropLoot = false;
 
+    public bool BossRound = false;
+
+    public static int enemiesDefeated;
+
     public float invincibilityTime = 0.25f;
 
     public bool isAlive = true;
 
     private float invincibleTimeElapsed = 0f;
+
+    public bool SlimeDropOffset = true;
 
     public bool canMove = true;
 
@@ -46,8 +52,22 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
             {
                 if (dropLoot)
                 {
-                    GetComponent<LootBag>().InstantiateLoot(transform.position + SlimeOffsetY);
+                    if (!SlimeDropOffset)
+                    {
+                        DropOffset = WitchOffsetY;
+                    }
+                    else
+                    {
+                        DropOffset = SlimeOffsetY;
+                    }
+
+                    GetComponent<LootBag>().InstantiateLoot(transform.position + DropOffset);
                 }
+                if (BossRound)
+                {
+                    enemiesDefeated++;
+                }
+
                 //Maybe not needed
                 Targetable = false;
 
@@ -104,6 +124,11 @@ public class DamagableCharacter : MonoBehaviour, IDamageable
 
     //Offset for Playerhitbox center compared to sprite center
     public static Vector3 PlayerOffsetY = new Vector3(0.0f, 0.1f, 0.0f);
+
+    //Offset for Playerhitbox center compared to sprite center
+    public static Vector3 WitchOffsetY = new Vector3(0.0f, -0.1f, 0.0f);
+
+    private Vector3 DropOffset;
 
     private void Start()
     {

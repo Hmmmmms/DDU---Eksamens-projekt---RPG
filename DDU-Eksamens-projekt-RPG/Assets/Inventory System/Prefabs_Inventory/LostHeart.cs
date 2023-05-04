@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LostHeart : MonoBehaviour, ICollectable
 {
-    public static event HandleLostHeartCollected OnLostHeartCollected;
-    public delegate void HandleLostHeartCollected(ItemData itemData);
-    public ItemData LostHeartData;
-
     public void Collect()
     {
 
         Destroy(gameObject);
 
-        OnLostHeartCollected?.Invoke(LostHeartData);
+        FindObjectOfType<SaveObjsBetweenScenes>().DeleteCharacterOnRestart();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

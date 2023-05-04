@@ -89,5 +89,11 @@ public class DialogueManager : MonoBehaviour
         NPCdroploot.NPCdropLoot();
         animator.SetBool("IsOpen", false);
         FindObjectOfType<PlayerController>().DialogueOff();
+        WitchInteract Witch = FindObjectOfType<WitchInteract>();
+
+        if (Witch)
+        {
+            Witch.WitchDialogueFinishedMethod();
+        }
     }
 }

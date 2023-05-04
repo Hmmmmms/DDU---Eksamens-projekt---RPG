@@ -23,8 +23,6 @@ public class Inventory : MonoBehaviour
 
         Sword.OnSwordCollected += Add;
         Shield.OnShieldCollected += Add;
-
-        LostHeart.OnLostHeartCollected += Add;
     }
     private void OnDisable()
     {
@@ -37,8 +35,6 @@ public class Inventory : MonoBehaviour
 
         Sword.OnSwordCollected -= Add;
         Shield.OnShieldCollected -= Add;
-
-        LostHeart.OnLostHeartCollected -= Add;
     }
 
 
