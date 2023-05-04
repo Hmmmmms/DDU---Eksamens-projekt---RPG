@@ -227,8 +227,10 @@ MonoBehaviour:
   HitSound: {fileID: 5760230728127129505}
   canTurnInvincible: 0
   dropLoot: 0
+  BossRound: 0
   invincibilityTime: 0.25
   isAlive: 1
+  SlimeDropOffset: 1
   canMove: 1
   health: 7
 --- !u!114 &1418243061120100133
@@ -256,7 +258,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 78a7aff78629bc34d8484550315ff25e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2fbf49b71cdfa7544bc9584af3eec2df, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

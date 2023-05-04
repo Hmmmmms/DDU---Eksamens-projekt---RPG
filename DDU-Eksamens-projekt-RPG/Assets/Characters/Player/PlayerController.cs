@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float lastAttackedAt = -9999f;
 
     [SerializeField] private AudioSource RunningSound;
+
+    [SerializeField] private AudioSource BlockSound;
     //Sounds
 
     public bool IsMoving
@@ -240,6 +242,7 @@ public class PlayerController : MonoBehaviour
 
     public void Blocking()
     {
+        BlockSound.Play();
         LockMovement();
         IsBlocking = true;
         _damageableCharacter.ToggleInvincibleEnabled();

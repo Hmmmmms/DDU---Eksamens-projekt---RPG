@@ -81,6 +81,8 @@ public class InventoryController : MonoBehaviour
                 if (numOfHealthPotions > 0 && playerDamagableCharacter.health != MaxHealth.numOfHearts)
                 {
 
+                    UsePotionSound.Play();
+
                     RemovenumOfHealthPotions();
                     playerDamagableCharacter.health++;
 
